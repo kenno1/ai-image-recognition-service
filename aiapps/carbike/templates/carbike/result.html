@@ -1,0 +1,32 @@
+{% extends 'carbike/base.html' %}
+{% block title %}Recogniton Result{% endblock %}
+
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">Recogniton Result</h4>
+
+    <table class='table'>
+        <tbody>
+            <tr>
+                <td>File Name</td>
+                <td>{{ photo_name }}</td>
+            </tr>
+            <tr>
+                <td>JPG</td>
+                <td><img class='preview-img' src={{ photo_data }} ></img></td>
+                </tr>
+            <tr>
+                <td>Predicted Label</td>
+                <td>{{ predicted }}</td>
+            </tr>
+            <tr>
+                <td>Recognition percentage</td>
+                <td>{{ percentage }} %</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href = "{% url 'carbike:index' %}" class="btn btn-primary">Back to Image Select</a>
+
+</div>
+{% endblock %}
